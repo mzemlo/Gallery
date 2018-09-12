@@ -1,0 +1,25 @@
+﻿@model Gallery.Models.PhotoViewModel
+
+<form action="" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <h2>Dodaj obraz</h2>
+
+    <div>
+        @Html.LabelFor(m => m.Title)
+        @Html.EditorFor(m => m.Title)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.AltText)
+        @Html.EditorFor(m => m.AltText)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Caption)
+        @Html.EditorFor(m => m.Caption)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ImageUpload)
+        @Html.TextBoxFor(m => m.ImageUpload, new { type = "file" })
+    </div>
+    <button type="submit" class="btn-primary">Dodaj</button>
+</form>

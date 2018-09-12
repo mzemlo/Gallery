@@ -1,0 +1,36 @@
+﻿@model Gallery.Models.PhotoViewModel
+
+
+<h2>Edit</h2>
+
+<form action="" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true);
+
+    <div>
+        @Html.LabelFor(m => m.Title)
+        @Html.EditorFor(m => m.Title)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.AltText)
+        @Html.EditorFor(m => m.AltText)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Caption)
+        @Html.EditorFor(m => m.Caption)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ImageUpload)
+        @Html.TextBoxFor(m => m.ImageUpload, new { type = "file" })
+    </div>
+    <button type="submit">Edytuj</button>
+</form>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

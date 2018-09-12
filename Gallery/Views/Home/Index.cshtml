@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Gallery.Models.Photo>
+
+<div class="row" style="margin-top: 50px;">
+    @foreach (var item in Model)
+    {
+        <a class="col-md-3 photo-box" href="@Url.Action("Details", "Photos", new { id = item.Id })"><img class="" src="@Html.DisplayFor(modelItem => item.ImageUrl)" title="@Html.DisplayFor(modelItem => item.Title)" alt="@Html.DisplayFor(modelItem => item.AltText)" /></a>
+    }
+</div>

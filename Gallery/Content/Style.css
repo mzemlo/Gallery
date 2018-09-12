@@ -1,0 +1,35 @@
+﻿body {
+    background-image: url("../img/191474-top-background-gradient-2880x1800.jpg");
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+    color: #f4f4f4;
+    background-attachment: fixed;
+}
+    body > #navigation {
+        background: #000;
+        border: none;
+    }
+
+body > #navigation *{
+    color: #f4f4f4;
+}
+
+body h2  {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.photo-box {
+    max-height: 150px;
+    overflow: hidden;
+    margin: 0 1% 10px 1%;
+    position: relative;
+    border: 3px solid white;
+    padding: 0;
+    box-sizing: border-box;
+    width: 23%;
+}
+
+.photo-box>img {
+    max-width: 100%;
+}

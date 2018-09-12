@@ -1,0 +1,72 @@
+﻿@model Gallery.Models.Photo
+
+
+    <h2>@Html.DisplayFor(model => model.Title)</h2>
+
+<div>
+    <div class="row">
+        <a href="@Html.DisplayFor(model => model.ImageUrl)">
+            <img class="thumbnail col-md-10" src="@Html.DisplayFor(model => model.ImageUrl)" title="@Html.DisplayFor(model => model.Title)" alt="@Html.DisplayFor(model => model.AltText)" />
+        </a>
+    </div>
+    <div class="row">
+        <a class="btn-download" href="@Html.DisplayFor(model => model.ImageUrl)" download>
+            Pobierz
+        </a>
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AltText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AltText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Do strony głównej", "Index", "Home") <span>|</span>
+        @Html.ActionLink("Wróć do przeglądu obrazów", "List", "Photos")
+    }
+    else
+    {
+        @Html.ActionLink("Wróć", "Index", "Home")
+    }
+</p>
